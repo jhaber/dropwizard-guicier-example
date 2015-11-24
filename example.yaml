@@ -1,3 +1,7 @@
 server:
   type: simple
   applicationContextPath: /example
+
+bindResources: true
+bindFilters: true
+bindExtras: true
