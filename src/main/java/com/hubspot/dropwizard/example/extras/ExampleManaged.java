@@ -15,12 +15,12 @@ public class ExampleManaged implements Managed {
   public ExampleManaged() {}
 
   @Override
-  public void start() throws Exception {
+  public void start() {
     LOG.info("ExampleManaged starting!");
   }
 
   @Override
-  public void stop() throws Exception {
+  public void stop() {
     LOG.info("ExampleManaged stopping!");
   }
 }
