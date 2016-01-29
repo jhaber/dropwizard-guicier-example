@@ -15,7 +15,7 @@ public class ExampleHealthCheck extends HealthCheck {
   public ExampleHealthCheck() {}
 
   @Override
-  protected Result check() throws Exception {
+  protected Result check() {
     LOG.info("ExampleHealthCheck triggered!");
     return Result.healthy();
   }

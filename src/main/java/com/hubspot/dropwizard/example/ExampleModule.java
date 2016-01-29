@@ -9,7 +9,6 @@ import com.hubspot.dropwizard.example.filters.ExampleRequestFilter;
 import com.hubspot.dropwizard.example.filters.ExampleResponseFilter;
 import com.hubspot.dropwizard.example.resources.ExampleResource;
 import com.hubspot.dropwizard.guicier.DropwizardAwareModule;
-import com.hubspot.dropwizard.guicier.JerseyBinder;
 
 /**
  * Extend DropwizardAwareModule to gain access to the Bootstrap, Configuration, and Environment
@@ -23,10 +22,10 @@ public class ExampleModule extends DropwizardAwareModule<ExampleConfiguration> {
       binder.bind(ExampleResource.class);
     }
 
-    // There is also a multibinder for request/response filters
+    // You can also bind request/response filters
     if (getConfiguration().bindFilters()) {
-      JerseyBinder.bindContainerRequestFilter(binder).to(ExampleRequestFilter.class);
-      JerseyBinder.bindContainerResponseFilter(binder).to(ExampleResponseFilter.class);
+      binder.bind(ExampleRequestFilter.class);
+      binder.bind(ExampleResponseFilter.class);
     }
 
     // Any Managed, Task, HealthCheck, or ServerLifecycleListener bound in Guice will be added to Dropwizard for you

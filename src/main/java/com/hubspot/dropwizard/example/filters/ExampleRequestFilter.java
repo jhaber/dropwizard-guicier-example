@@ -1,12 +1,14 @@
 package com.hubspot.dropwizard.example.filters;
 
-import com.sun.jersey.spi.container.ContainerRequest;
-import com.sun.jersey.spi.container.ContainerRequestFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
+import javax.ws.rs.container.ContainerRequestContext;
+import javax.ws.rs.container.ContainerRequestFilter;
+import javax.ws.rs.ext.Provider;
 
+@Provider
 public class ExampleRequestFilter implements ContainerRequestFilter {
   private static final Logger LOG = LoggerFactory.getLogger(ExampleRequestFilter.class);
 
@@ -14,9 +16,7 @@ public class ExampleRequestFilter implements ContainerRequestFilter {
   public ExampleRequestFilter() {}
 
   @Override
-  public ContainerRequest filter(ContainerRequest request) {
+  public void filter(ContainerRequestContext requestContext) {
     LOG.info("ExampleRequestFilter triggered!");
-
-    return request;
   }
 }

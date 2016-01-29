@@ -19,7 +19,7 @@ public class ExampleTask extends Task {
   }
 
   @Override
-  public void execute(ImmutableMultimap<String, String> parameters, PrintWriter output) throws Exception {
+  public void execute(ImmutableMultimap<String, String> parameters, PrintWriter output) {
     LOG.info("ExampleTask triggered!");
   }
 }
