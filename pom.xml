@@ -15,7 +15,7 @@
   <properties>
     <basepom.shaded.main-class>com.hubspot.dropwizard.example.ExampleApplication</basepom.shaded.main-class>
 
-    <dropwizard.version>1.0.0.1</dropwizard.version>
+    <dropwizard.version>1.0.0-rc3</dropwizard.version>
     <hibernate.version>5.2.4.Final</hibernate.version>
 
     <dep.guava.version>19.0</dep.guava.version>
@@ -32,7 +32,7 @@
       <dependency>
         <groupId>com.hubspot.dropwizard</groupId>
         <artifactId>dropwizard-guicier</artifactId>
-        <version>1.0.0-rc4-SNAPSHOT</version>
+        <version>1.0.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.glassfish.jersey.core</groupId>
